@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/articles/{article}/edit', [UserController::class, 'edit'])->name('articles.edit');
     Route::post('/articles/{article}/update', [UserController::class, 'update'])->name('articles.update');
 
+    Route::get('/articles/{article}/delete', [UserController::class, 'delete'])->name('articles.delete');
+
 });
 
 require __DIR__.'/auth.php';

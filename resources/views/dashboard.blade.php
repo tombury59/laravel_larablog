@@ -15,6 +15,13 @@
                 </div>
             @endif
 
+                @if (session('error'))
+                    <div class="bg-red-500 text-white p-4 rounded-lg mt-6 mb-6 text-center">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+
 
                 <!-- Articles -->
                 @foreach ($articles as $article)
@@ -23,7 +30,10 @@
                             <h2 class="text-2xl font-bold">{{ $article->title }}</h2>
                             <p class="text-gray-700 dark:text-gray-300">{{ substr($article->content, 0, 30) }}...</p>
                             <div class="text-right">
-                                <a href="{{ route('articles.edit', $article->id) }}" class="text-red-500 hover:text-red-700">Modifier</a>
+                                <a href="{{ route('articles.edit', $article->id) }}" class="text-red-500 hover:text-red-700">✏️</a>
+                            </div>
+                            <div class="text-right">
+                                <a href="{{ route('articles.delete', $article->id) }}" class="text-red-500 hover:text-red-700">🗑️</a>
                             </div>
                         </div>
                     </div>
