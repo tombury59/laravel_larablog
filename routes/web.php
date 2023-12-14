@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserController;
@@ -39,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/articles/{article}/update', [UserController::class, 'update'])->name('articles.update');
 
     Route::get('/articles/{article}/delete', [UserController::class, 'delete'])->name('articles.delete');
+
+    Route::post('/comments/store/{article}', [CommentController::class, 'store'])->name('comments.store');
 
 });
 
