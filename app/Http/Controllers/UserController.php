@@ -72,6 +72,7 @@ class UserController extends Controller
         // On met à jour l'article
         $article->update($data);
 
+
         // On redirige l'utilisateur vers la liste des articles (avec un flash)
         return redirect()->route('dashboard')->with('success', 'Article mis à jour !');
     }
