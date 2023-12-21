@@ -1,11 +1,21 @@
 <x-guest-layout>
+
+
+
     <div class="text-center">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ $article->title }}
         </h2>
     </div>
 
+    <p class="mt-2">
+        @foreach ($article->categories as $category)
+            <span class="inline-block bg-gray-500 text-white px-2 py-1 rounded-full text-xs mr-2">{{ $category->name }}</span>
+        @endforeach
+    </p>
+
     <div class="text-gray-500 text-sm">
+        <br>
         Publié le {{ $article->created_at->format('d/m/Y') }} par <a href="{{ route('public.index', $article->user->id) }}">{{ $article->user->name }}</a>
     </div>
 

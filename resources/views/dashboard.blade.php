@@ -32,6 +32,9 @@
                             <div class="text-right">
                                 <a href="{{ route('articles.edit', $article->id) }}" class="text-red-500 hover:text-red-700">✏️</a>
                             </div>
+                            @foreach ($article->categories as $category)
+                                <span class="inline-block bg-gray-500 text-white px-2 py-1 rounded-full text-xs mr-2">{{ $category->name }}</span>
+                            @endforeach
                             <div class="text-right">
                                 <a href="{{ route('articles.delete', $article->id) }}" class="text-red-500 hover:text-red-700">🗑️</a>
                             </div>
