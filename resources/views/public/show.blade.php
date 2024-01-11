@@ -36,6 +36,8 @@
                         <span class="text-gray-500 text-xs ml-2">{{ $comment->created_at->diffForHumans() }}</span>
                     </div>
                 </div>
+                <br>
+
             @endforeach
 
             <form action="{{ route('comments.store', ['article' => $article->id]) }}" method="post" class="mt-6">

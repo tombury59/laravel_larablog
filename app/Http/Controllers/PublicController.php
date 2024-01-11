@@ -45,4 +45,6 @@ class PublicController extends Controller
         // Je vous laisse faire le code
         // N'oubliez pas de vérifier que l'article est publié (draft == 0)
     }
+
+
 }

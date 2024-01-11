@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
@@ -49,6 +50,4 @@ require __DIR__.'/auth.php';
 
 Route::get('/{user}', [PublicController::class, 'index'])->name('public.index');
 Route::get('/{user}/{article}', [PublicController::class, 'show'])->name('public.show');
-
-
 
